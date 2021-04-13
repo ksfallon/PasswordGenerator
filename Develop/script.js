@@ -3,6 +3,10 @@ var generateBtn = document.querySelector('#generate');
 // created these empty strings which will be filled later with variables we create'
 var random = ""
 var newPass = ""
+var symbols = ""
+var numbers = "1234567890"
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 function generatePassword() {
@@ -18,7 +22,10 @@ function generatePassword() {
   }
 
   if(pwLength > 7 && pwLength < 129){
-    
+    confirm('Please choose at least 1 of the 4 character style lists to generate your password. Click "Ok" for Yes and "Cancel" for No.')
+    confirm('Would you like to use Symbols in your password?');
+      if 
+
   }
 
 }
