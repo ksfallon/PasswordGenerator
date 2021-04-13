@@ -6,6 +6,7 @@ var newPass = ""
 
 
 function generatePassword() {
+  
   alert("Let's create a new and SECURE password! Your password MUST be at least 8, but no more than 128, characters long. And it MUST use at least 1 of the 4 character style options.");
   var pwLength = prompt(' Please enter a number between 8 and 128.')
 
