@@ -3,10 +3,12 @@ var generateBtn = document.querySelector('#generate');
 // created these empty strings which will be filled later with variables we create'
 var random = ""
 var newPass = ""
-var symbols = ""
-var numbers = "1234567890"
-var lowerCase = "abcdefghijklmnopqrstuvwxyz"
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//why am I having so much trouble adding the symbols??
+// var symbols = "!@#$%^&*()_=+,-./:\|"
+// var numbers = "1234567890"
+// var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+// var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// var myNull = ""
 
 
 function generatePassword() {
@@ -23,8 +25,32 @@ function generatePassword() {
 
   if(pwLength > 7 && pwLength < 129){
     confirm('Please choose at least 1 of the 4 character style lists to generate your password. Click "Ok" for Yes and "Cancel" for No.')
-    confirm('Would you like to use Symbols in your password?');
-      if 
+    SymBls = confirm('Would you like to use symbol characters in your password?');
+    LowerC = confirm('Would you like to use lower case characters in your password?');
+    UpperC = confirm('Would you like to use upper case characters in your password?');
+    NumBrs = confirm('Would you like to use number characters in your password?');
+
+    // if(SymBls = true) {
+    //   SymBls = symbols
+    // }
+    //   else {SymBls = myNull}
+
+    //   if(LowerC = true) {
+    //     LowerC = lowerCase
+    //   }
+    //    else {LowerC = myNull}
+
+    //    if(UpperC = true) {
+    //      UpperC = upperCase
+    //    }
+    //     else {UpperC = myNull}
+
+    //     if(NumBrs = true) {
+    //       NumBrs = numbers
+    //     }
+    //      else {NumBrs = myNull}
+      
+    // }
 
   }
 
@@ -54,3 +80,5 @@ generateBtn.addEventListener('click', writePassword);
 //   Num = confirm["Would you like to use numbers in your password? Click 'Ok' for Yes or click 'cancel' for No"]
 
 
+'i wrote my if and else statements for my variables, and i gave my confirm vars diff names than ther global counterparts. Im not sure where my code is broken/bugged. Im wondering if it is the global vars and should i make them local, or if it is the nulls im 
+using, or something else!'
