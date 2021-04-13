@@ -55,7 +55,12 @@ function generatePassword() {
         }
          else {NumBrs ===  myNull}
       
-    }
+         for(let i = 0; x=random.length; i<pwLength; ++i) {
+           newPass += random.charAt(Math.floor(Math.random()*x))
+         }
+
+         return 
+    } 
 
   }
 
