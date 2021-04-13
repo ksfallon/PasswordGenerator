@@ -4,11 +4,11 @@ var generateBtn = document.querySelector('#generate');
 var random = ""
 var newPass = ""
 //why am I having so much trouble adding the symbols??
-// var symbols = "!@#$%^&*()_=+,-./:\|"
-// var numbers = "1234567890"
-// var lowerCase = "abcdefghijklmnopqrstuvwxyz"
-// var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-// var myNull = ""
+var symbols = "!@#$%^&*()_=+,-./:\|"
+var numbers = "1234567890"
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var myNull = ""
 
 
 function generatePassword() {
@@ -30,27 +30,32 @@ function generatePassword() {
     UpperC = confirm('Would you like to use upper case characters in your password?');
     NumBrs = confirm('Would you like to use number characters in your password?');
 
-    // if(SymBls = true) {
-    //   SymBls = symbols
-    // }
-    //   else {SymBls = myNull}
+    if(SymBls === false && LowerC === false && UpperC === false && NumBrs === false){
+      alert('Sorry you must choose at least one of the character groups! please try again')
+      return generatePassword();
+    }
 
-    //   if(LowerC = true) {
-    //     LowerC = lowerCase
-    //   }
-    //    else {LowerC = myNull}
+    if(SymBls === true) {
+      SymBls ===  symbols
+    }
+      else {SymBls === myNull}
 
-    //    if(UpperC = true) {
-    //      UpperC = upperCase
-    //    }
-    //     else {UpperC = myNull}
+      if(LowerC ===  true) {
+        LowerC ===  lowerCase
+      }
+       else {LowerC ===  myNull}
 
-    //     if(NumBrs = true) {
-    //       NumBrs = numbers
-    //     }
-    //      else {NumBrs = myNull}
+       if(UpperC ===  true) {
+         UpperC ===  upperCase
+       }
+        else {UpperC ===  myNull}
+
+        if(NumBrs ===  true) {
+          NumBrs ===  numbers
+        }
+         else {NumBrs ===  myNull}
       
-    // }
+    }
 
   }
 
@@ -79,6 +84,3 @@ generateBtn.addEventListener('click', writePassword);
 // if (passwordLength > 8 && passwordLength <128) {
 //   Num = confirm["Would you like to use numbers in your password? Click 'Ok' for Yes or click 'cancel' for No"]
 
-
-'i wrote my if and else statements for my variables, and i gave my confirm vars diff names than ther global counterparts. Im not sure where my code is broken/bugged. Im wondering if it is the global vars and should i make them local, or if it is the nulls im 
-using, or something else!'
