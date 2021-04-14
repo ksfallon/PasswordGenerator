@@ -131,6 +131,25 @@ function passwordInput() {
   ;
 
   }
+
+  // want to create a function that will random choices from the arrays
+  function makeRandom(array) {
+    //get a random number of the length of characters to use
+    var arrNum = Math.floor(Math.random() * array.length)
+    var randNum = array[arrNum];
+    return randNum;
+  }
+
+function generatePassword(){
+  var object = passwordInput();
+
+  if(object.useLow){
+    console.log(randNum)
+  }
+
+}
+
+
 // Write password to the #password input
 function writePassword() {
   console.log('writing password');
