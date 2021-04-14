@@ -15,7 +15,7 @@ function generatePassword() {
   //First have an alert explaining the criteria for the passwords, and then they click 'ok' to go to the next screen.
   alert("Let's create a new and SECURE password! Your password MUST be at least 8, but no more than 128, characters long. And it MUST use at least 1 of the 4 character style options.");
   //Second use a 'prompt' so user can enter in the password length they want between 8-128 characters.
-  var pwLength = prompt(' Please enter a number between 8 and 128.')
+  var pwLength = prompt('Please enter a number between 8 and 128.')
 
   // if the user does not choose a number between 8 and 128 then they will see this error message and will be asked to start over and follow the parameters.
   if(pwLength < 8 || pwLength > 128){
@@ -43,46 +43,51 @@ if(isNaN(pwLength)) {
   
     if(SymBls === true) 
       {
-     SymBls ===  symbols
+     SymBls = symbols
      }
-      else {SymBls === myNull}
+    else {
       console.log('SymBls', SymBls)
+    }
 
-    //   if(LowerC ===  true) {
-    //     LowerC ===  lowerCase
-    //   }
-    //    else {LowerC ===  myNull}
+      if(LowerC ===  true) {
+        LowerC ===  lowerCase
+      }
+       else {LowerC ===  myNull}
+       console.log('LowerC', LowerC)
 
-    //    if(UpperC ===  true) {
-    //      UpperC ===  upperCase
-    //    }
-    //     else {UpperC ===  myNull}
+       if(UpperC ===  true) {
+         UpperC ===  upperCase
+       }
+        else {UpperC ===  myNull}
+        console.log('UpperC', UpperC)
 
-    //     if(NumBrs ===  true) {
-    //       NumBrs ===  numbers
-    //     }
-    //      else {NumBrs ===  myNull}
-    //   }
+        if(NumBrs ===  true) {
+          NumBrs ===  numbers
+        }
+         else {NumBrs ===  myNull}
+         console.log('NumBrs', NumBrs)
+      
     
-    //  random = (SymBls + NumBrs + UpperC + LowerC)
+    random = (SymBls + NumBrs + UpperC + LowerC)
 
   // is it ok to use var instead of let??
-  // for (var i = 0; x=random.length; i<pwLength; ++i) {
-  //         passWord += random.charAt(Math.floor(Math.random()*x))
-  //       }
+  for (var i = 0; x=random.length; i<pwLength; ++i) {
+          passWord += random.charAt(Math.floor(Math.random()*x))
+       }
     
-  //       alert('Your new password is ' + passWord);
-  //      return
-    } 
+  // alert('Your new password is ' + passWord);
+  // return passWord;
+  //   } 
 
   }
 // Write password to the #password input
 function writePassword() {
   console.log('writing password');
+  //this shows what is in the html box, that is why it shows the password at the end
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
 }
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
+}
