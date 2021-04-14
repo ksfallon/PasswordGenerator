@@ -58,3 +58,13 @@ var passwordLength = window.prompt('Which characters would you like to use in yo
 // if they choose Y N Y Y - run math.floor(math.random()) for lowercase AND symbols AND numbers
 // if they choose Y Y Y Y - run math.floor(math.random()) for ALL variables
 
+// // function writePassword() {
+// var pwLength = window.prompt("Let's create a secure password! It will need to be a certain length and contain at least one character type. Please choose a password length that is between 8 to 128 characters long.");
+
+// if (passwordLength < 8 || passwordLength > 128) {
+//   alert("You need to choose a number between 8 and 128 characters, please enter a new character length meeting these parameters")
+//   return writePassword();
+// }
+
+// if (passwordLength > 8 && passwordLength <128) {
+//   Num = confirm["Would you like to use numbers in your password? Click 'Ok' for Yes or click 'cancel' for No"]}
