@@ -141,7 +141,7 @@ function passwordInput() {
 function generatePassword(){
   var object = passwordInput();
   var newArray = ""
-  var arrPassWord = ""
+  var newPassWord = ""
 
   if(object.symbol) {
     newArray = newArray.concat(symbols);
@@ -162,14 +162,17 @@ function generatePassword(){
     newArray = newArray.concat(numbers);
   }
   console.log(newArray)
-  console.log(makeRandom(newArray))
+
 
   for(var i = 0; i <= object.length; ++i) {
-    arrPassword = makeRandom(newArray);
-    var listPassword = arrPassWord.join();
-    var newPassword = listPassword.join();
-    console.log(newPassword);
+    var arrPassword = makeRandom(newArray);
+    console.log(arrPassword);
   }
+
+  var password = arrPassword.join()
+  console.log(password)
+
+  return password;
 // for newArray I want to run it through makeRandom object.length many times to generate my password.
   //for (var i=0; i <=object.length; makeRandom(newArray); ++i )
   //for (var i = 0; i < randNum+1; i++)
