@@ -1,8 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 // created these empty strings which will be filled later with variables we create'
-var random = ""
-var passWord = ""
 //these are my global variables in arrays so I can use them in any function on this page.
 var symbols = [ '@','%','+','\\',',','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u' , 'v', 'w', 'x' , 'y', 'z']
@@ -138,45 +136,84 @@ function passwordInput() {
     var randNum = array[arrNum];
     return randNum;
   }
-  console.log(makeRandom[lowerCase]);
-
 
 
 function generatePassword(){
   var object = passwordInput();
+  var newArray = ""
+  var arrPassWord = ""
 
-  //now create if statements to bring in the variable arrays
-  if(object.symbol)  {
-    makeRandom(symbols);
-    // object = object.concat(symbols);
-    //console.log(makeRandom(symbols));
-  } else {
-      return object;
-    }
+  if(object.symbol) {
+    newArray = newArray.concat(symbols);
+  }
+  console.log(newArray)
 
   if(object.lower) {
-    makeRandom(lowerCase);
-    // object = object.concat(lowerCase);
-    console.log(object);
-  } else {
-    return object;
-    }
+    newArray = newArray.concat(lowerCase);
+  }
+  console.log(newArray)
 
   if(object.upper) {
-    makeRandom(upperCase);
-   // object = object.concat(upperCase);
-    console.log(object);
-  } else {
-    return object;
-    }
+    newArray = newArray.concat(upperCase);
+  }
+  console.log(newArray)
 
   if(object.number) {
-    makeRandom(numbers);
-    // object = object.concat(numbers)
-    console.log(object);
-  } else {
-    return object;
-   }
+    newArray = newArray.concat(numbers);
+  }
+  console.log(newArray)
+  console.log(makeRandom(newArray))
+
+  for(var i = 0; i <= object.length; ++i) {
+    arrPassword = makeRandom(newArray);
+    var listPassword = arrPassWord.join();
+    var newPassword = listPassword.join();
+    console.log(newPassword);
+  }
+// for newArray I want to run it through makeRandom object.length many times to generate my password.
+  //for (var i=0; i <=object.length; makeRandom(newArray); ++i )
+  //for (var i = 0; i < randNum+1; i++)
+
+
+    //now create if statements to bring in the variable arrays
+  // if(object.symbol)  {
+  //   makeRandom(symbols);
+  //   // object = object.concat(symbols);
+  //   console.log(makeRandom(symbols));
+  // } 
+  // // else {
+  // //     return object;
+  // //   }
+
+  // if(object.lower) {
+  //   makeRandom(lowerCase);
+  //   // object = object.concat(lowerCase);
+  //   //console.log(object);
+  //   console.log(makeRandom(lowerCase));
+  // } 
+  // // else {
+  // //   return object;
+  // //   }
+
+  // if(object.upper) {
+  //   makeRandom(upperCase);
+  //  // object = object.concat(upperCase);
+  //   //console.log(object);
+  //   console.log(makeRandom(upperCase));
+  // } 
+  // // else {
+  // //   return object;
+  // //   }
+
+  // if(object.number) {
+  //   makeRandom(numbers);
+  //   // object = object.concat(numbers)
+  //   //console.log(object);
+  //   console.log(makeRandom(numbers));
+  // } 
+  // else {
+  //   return object;
+  //  }
   //for (var i = 0; i < randNum+1; i++)
 }
 
