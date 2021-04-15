@@ -107,6 +107,12 @@ function passwordInput() {
     upper: useUp,
     number: useNum
   }
+  console.log(passwordObject.length)
+  console.log(passwordObject.symbol)
+  console.log(passwordObject.lower)
+  console.log(passwordObject.upper)
+  console.log(passwordObject.number)
+
   // by returning it its now connected back / looped into the passwordInput function
   return passwordObject;
   ;
@@ -128,20 +134,20 @@ function generatePassword(){
   var object = passwordInput();
 
   //now create if statements to bring in the variable arrays
-  if(object.useSym){
+  if(object.useSym === true){
     // do i want to push the lowerCase variable here to object?
     object = object.concat(symbols);
     console.log(object);
   }
-  if(object.useLow){
+  if(object.useLow === true){
     // do i want to push the lowerCase variable here to object?
     object = object.concat(lowerCase);
     console.log(object);
   }
-  if(object.useUp){
+  if(object.useUp === true){
     object = object.concat(upperCase);
   }
-  if(object.useNum){
+  if(object.useNum === true){
     object = object.concat(numbers)
   }
   //for (var i = 0; i < randNum+1; i++)
