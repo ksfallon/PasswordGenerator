@@ -35,8 +35,15 @@ function passwordInput() {
     var useUp = confirm('Would you like to use upper case characters in your password?');
     var useNum = confirm('Would you like to use number characters in your password?');
 
-    if(useSym === false && useLow === false && useUp === false && useNum === false){
-      alert('Sorry you must choose at least one of the character groups! please try again')
+    if(
+      useSym === false && 
+      useLow === false && 
+      useUp === false && 
+      useNum === false
+    ) {
+      alert(
+        'Sorry you must choose at least one of the character groups! please try again'
+        );
       return;
     }
   
@@ -113,6 +120,8 @@ function passwordInput() {
   console.log(passwordObject.upper)
   console.log(passwordObject.number)
 
+  console.log(passwordObject)
+
   // by returning it its now connected back / looped into the passwordInput function
   return passwordObject;
   ;
@@ -129,27 +138,45 @@ function passwordInput() {
     var randNum = array[arrNum];
     return randNum;
   }
+  console.log(makeRandom[lowerCase]);
+
+
 
 function generatePassword(){
   var object = passwordInput();
 
   //now create if statements to bring in the variable arrays
-  if(object.useSym === true){
-    // do i want to push the lowerCase variable here to object?
-    object = object.concat(symbols);
+  if(object.symbol)  {
+    makeRandom(symbols);
+    // object = object.concat(symbols);
+    //console.log(makeRandom(symbols));
+  } else {
+      return object;
+    }
+
+  if(object.lower) {
+    makeRandom(lowerCase);
+    // object = object.concat(lowerCase);
     console.log(object);
-  }
-  if(object.useLow === true){
-    // do i want to push the lowerCase variable here to object?
-    object = object.concat(lowerCase);
+  } else {
+    return object;
+    }
+
+  if(object.upper) {
+    makeRandom(upperCase);
+   // object = object.concat(upperCase);
     console.log(object);
-  }
-  if(object.useUp === true){
-    object = object.concat(upperCase);
-  }
-  if(object.useNum === true){
-    object = object.concat(numbers)
-  }
+  } else {
+    return object;
+    }
+
+  if(object.number) {
+    makeRandom(numbers);
+    // object = object.concat(numbers)
+    console.log(object);
+  } else {
+    return object;
+   }
   //for (var i = 0; i < randNum+1; i++)
 }
 
