@@ -27,7 +27,7 @@ function passwordInput() {
     return;
   }
 
-    confirm('Please choose at least 1 of the 4 character style lists to generate your password. Click "Ok" for Yes and "Cancel" for No.')
+    alert('Please choose at least 1 of the 4 character style lists to generate your password. Click "Ok" for Yes and "Cancel" for No.')
     var useSym = confirm('Would you like to use symbol characters in your password?');
     var useLow = confirm('Would you like to use lower case characters in your password?');
     var useUp = confirm('Would you like to use upper case characters in your password?');
