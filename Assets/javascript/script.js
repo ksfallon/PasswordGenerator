@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector('#generate');
 // created these empty strings which will be filled later with variables we create'
 //these are my global variables in arrays so I can use them in any function on this page.
-var symbols = [ '@','%','+','\\',',','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
+var symbols = ['!', ' ', '"', '#','$','%','&',"'",')','(','*','+',',','-','.','/',':',';','<','>','=','?','@',']','[','\\','^','_','`','}','{', '|','~'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u' , 'v', 'w', 'x' , 'y', 'z']
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var numbers = ['1', '2', '3', '4' , '5', '6', '7', '8', '9', '0']
@@ -132,7 +132,7 @@ function passwordInput() {
     //array.length is the length of the array
     //our variable arrNum is Array number, and we get this by first multiplying out array length but Math.ramdom
     //
-    var arrNum = Math.floor(Math.random() * array.length)
+    var arrNum = (Math.floor(Math.random() * array.length));
     var randNum = array[arrNum];
     return randNum;
   }
@@ -140,8 +140,8 @@ function passwordInput() {
 
 function generatePassword(){
   var object = passwordInput();
-  var newArray = ""
-  var newPassWord = ""
+  var newArray = []
+  var password = ""
 
   if(object.symbol) {
     newArray = newArray.concat(symbols);
@@ -163,16 +163,20 @@ function generatePassword(){
   }
   console.log(newArray)
 
+  console.log('object ', object)
 
-  for(var i = 0; i <= object.length; ++i) {
+
+  for(var i = 0; i < object.length+1; ++i) {
     var arrPassword = makeRandom(newArray);
     console.log(arrPassword);
+    password = password.concat(arrPassword)
   }
 
   // var password = arrPassword.join()
   // console.log(password)
   console.log(typeof arrPassword)
-  var password = arrPassword
+  // password = password.concat(arrPassword)
+  console.log("final password", password)
   // console.log(arrPassword.join(''))
 
   return password;
