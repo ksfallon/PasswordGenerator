@@ -169,8 +169,11 @@ function generatePassword(){
     console.log(arrPassword);
   }
 
-  var password = arrPassword.join()
-  console.log(password)
+  // var password = arrPassword.join()
+  // console.log(password)
+  console.log(typeof arrPassword)
+  var password = arrPassword
+  // console.log(arrPassword.join(''))
 
   return password;
 // for newArray I want to run it through makeRandom object.length many times to generate my password.
