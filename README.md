@@ -8,18 +8,18 @@ For this homework assignment I decided to put my variables into arrays. I unders
 
 1. I wanted to make sure I set *alerts* that thoroughly explained the password parameters. This is why I included the instructions before asking any questions: "Let's create a new and SECURE password! Your password MUST be at least 8, but no more than 128, characters long. And it MUST use at least 1 of the 4 character style options." I used an *alert* because I only want the user to have to option to click OK, there is no real need for a cancel.
 
-[Screen SHOT of FIRST ALERT] 
+![FIRST ALERT](https://media.giphy.com/media/PHLNrNq6u3z2IOTRXU/giphy.gif) 
 
 2. Once the user clicks OK on the first *alert*, the user is directed to a *prompt* window and are asked to "Please enter a number between 8 and 128." By using the *prompt* function it gives a space for users to type in their answer. 
 - If the user does not choose a number between 8-128, this *alert* pops up 'Sorry that number does not meet our parameters, please try again! The user has to start over and must click Generate Password again.
 >> - Inside of an *if statement* I used **pwlength < 8 || 128 > pwlength**, to tell my function to check to see if the number is less than 8 OR greater than 128 to send my error alert.
 
-[GIF of wrong number]
+![WRONG NUMBER](https://media.giphy.com/media/gOWW2lt6d70NPEROgt/giphy.gif)
 
 - If the user does not choose a number but instead a symbol or letter a similar *alert* pops up: 'Sorry that is not a number and does not meet our parameters, please try again!' and the user must start over and click Generate Password again. 
 >> - I used the **isNAN** (is not a number) function within an if statement to determine if the number entered which I called pwLength is an actual number or not. If it determines the pwLength given was not a number than the user gets my error *alert*.
 
-[GIF of isNAN error]
+![isNAN error](https://media.giphy.com/media/EeIICXhi2bWLkykDG6/giphy.gif)
 
 - When the user types a number between 8-128 then a new *alert* pops up explaining (again) "Please choose at least 1 of the 4 character style lists to generate your password. Click "Ok" for Yes and "Cancel" for No." I figured why not explain that ok means yes and cancel means no. 
 
@@ -27,11 +27,11 @@ For this homework assignment I decided to put my variables into arrays. I unders
 - First the user is asked 'Would you like to use symbol characters in your password?' they'll either choose ok or cancel to move through the 4 character variable windows.
 >> - I used *confirms*, because this gives the user to option to click OK or Cancel.
 
-[GIF of VARIABLE selection, all 4 variables]
+![select correctly](https://media.giphy.com/media/r9Hng08xrbZO4Dm5J1/giphy.gif)
 
 - If the user clicks No or Cancel for all of the variables than the alert 'Sorry you must choose at least one of the character groups! please try again' and the user is sent back to the Password Generator page.
 
-[GIF OF selecting CANCEL for all variables]
+![SELECTS NO VARIABLES](https://media.giphy.com/media/3LE0fKJ3KtTZcW3V07/giphy.gif)
 
 ## Deeper into The Code: The Functions that generate a Random Password 
 

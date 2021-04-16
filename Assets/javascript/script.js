@@ -1,13 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
-// created these empty strings which will be filled later with variables we create'
 //these are my global variables in arrays so I can use them in any function on this page.
 var symbols = ['!', ' ', '"', '#','$','%','&',"'",')','(','*','+',',','-','.','/',':',';','<','>','=','?','@',']','[','\\','^','_','`','}','{', '|','~'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u' , 'v', 'w', 'x' , 'y', 'z']
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var numbers = ['1', '2', '3', '4' , '5', '6', '7', '8', '9', '0']
 
-//our first function is going to help me find all the variables and the length that I will generate my new password from
+//our first function is going to help me find all the variables and the length, aka the input, that I will need to generate my new password
 function passwordInput() {
   //First have an alert explaining the criteria for the passwords, and then they click 'ok' to go to the next screen.
   alert("Let's create a new and SECURE password! Your password MUST be at least 8, but no more than 128, characters long. And it MUST use at least 1 of the 4 character style options.");
@@ -45,67 +44,9 @@ function passwordInput() {
       return;
     }
   
-    // if(useSym === true) 
-    //   {
-    //  // add var symbols to var random list
-    //  console.log('current random list: ' , random)
-    //  random = symbols + random
-    //  console.log('new random list: ', random)
-    //  }
-    // else {
-      // console.log('SymBls', SymBls)
-    
-
-    // if(useLow ===  true) 
-    // {
-    //   console.log('current random list: ' , random)
-    //   random = lowerCase + random
-    //   console.log('new random list: ', random)
-    // }
-      //   LowerC ===  lowerCase
-      // }
-      //  else {LowerC ===  myNull}
-      //  console.log('LowerC', LowerC)
-
-    // if(useUp ===  true) 
-    // {
-    //   console.log('current random list: ' , random)
-    //   random = upperCase + random
-    //   console.log('new random list: ', random)
-    // }
-      //    UpperC ===  upperCase
-      //  }
-        // else {UpperC ===  myNull}
-        // console.log('UpperC', UpperC)
-
-  // if(useNum ===  true) 
-    // {
-      // console.log('current random list: ' , random)
-      // random = numbers + random
-      // console.log('new random list: ', random)
-    // }
-        //   NumBrs ===  numbers
-        // }
-        //  else {NumBrs ===  myNull}
-        //  console.log('NumBrs', NumBrs)
-      
-    //**IMPORTANT, the return at the end will be important so it doesnt continue to add to the random list!! */
-    // random = (SymBls + NumBrs + UpperC + LowerC)
-
-  // is it ok to use var instead of let??
-  // for (var i = 0; x=random.length; i<pwLength; ++i) {
-  //         passWord += random.charAt(Math.floor(Math.random()*x))
-  //      }
-    
-  // alert('Your new password is ' + passWord);
-  // return passWord;
-  // 
-
-    //var passwordObject is the variable in an object. the pairs are the names such as length, symbol, etc and the value are the  booleans variables, such as useSym and useLow as well as the intergar variable pwLength  
-
-  var  passwordObject = {
     //var passwordObject is the variable in an object. the pairs are the names such as length, symbol, etc and the value are the  booleans variables, such as useSym and useLow as well as the intergar variable pwLength  
     // my key-value pairs; 
+    var  passwordObject = {
     length: pwLength,
     symbol: useSym,
     lower: useLow,
@@ -166,7 +107,7 @@ function generatePassword(){
   console.log('object ', object)
 
 
-  for(var i = 0; i < object.length+1; ++i) {
+  for(var i = 0; i < object.length; ++i) {
     var arrPassword = makeRandom(newArray);
     console.log(arrPassword);
     password = password.concat(arrPassword)
@@ -180,51 +121,7 @@ function generatePassword(){
   // console.log(arrPassword.join(''))
 
   return password;
-// for newArray I want to run it through makeRandom object.length many times to generate my password.
-  //for (var i=0; i <=object.length; makeRandom(newArray); ++i )
-  //for (var i = 0; i < randNum+1; i++)
 
-
-    //now create if statements to bring in the variable arrays
-  // if(object.symbol)  {
-  //   makeRandom(symbols);
-  //   // object = object.concat(symbols);
-  //   console.log(makeRandom(symbols));
-  // } 
-  // // else {
-  // //     return object;
-  // //   }
-
-  // if(object.lower) {
-  //   makeRandom(lowerCase);
-  //   // object = object.concat(lowerCase);
-  //   //console.log(object);
-  //   console.log(makeRandom(lowerCase));
-  // } 
-  // // else {
-  // //   return object;
-  // //   }
-
-  // if(object.upper) {
-  //   makeRandom(upperCase);
-  //  // object = object.concat(upperCase);
-  //   //console.log(object);
-  //   console.log(makeRandom(upperCase));
-  // } 
-  // // else {
-  // //   return object;
-  // //   }
-
-  // if(object.number) {
-  //   makeRandom(numbers);
-  //   // object = object.concat(numbers)
-  //   //console.log(object);
-  //   console.log(makeRandom(numbers));
-  // } 
-  // else {
-  //   return object;
-  //  }
-  //for (var i = 0; i < randNum+1; i++)
 }
 
 
