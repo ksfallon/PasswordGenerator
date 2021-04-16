@@ -53,14 +53,6 @@ function passwordInput() {
     upper: useUp,
     number: useNum
   }
-  console.log(passwordObject.length)
-  console.log(passwordObject.symbol)
-  console.log(passwordObject.lower)
-  console.log(passwordObject.upper)
-  console.log(passwordObject.number)
-
-  console.log(passwordObject)
-
   // by returning it its now connected back / looped into the passwordInput function
   return passwordObject;
   ;
@@ -71,55 +63,49 @@ function passwordInput() {
   function makeRandom(array) {
     //get a random number of the length of characters to use
     //array.length is the length of the array
-    //our variable arrNum is Array number, and we get this by first multiplying out array length but Math.ramdom
+    //our variable arrNum is Array number, and we get this by first multiplying out array length by Math.ramdom
     //
     var arrNum = (Math.floor(Math.random() * array.length));
     var randNum = array[arrNum];
     return randNum;
   }
 
-
+//need this function to combine the variable arrays into a new array
+//the makeRandom function is now a local variable called object.
+//the variable newArray has empty brackets to indicate it will be an array.
+//the variable password has empty quotation marks to indicate it will be a string.
 function generatePassword(){
   var object = passwordInput();
   var newArray = []
   var password = ""
 
+  //using the concat function to combine the global character arrays into newArray
   if(object.symbol) {
     newArray = newArray.concat(symbols);
   }
-  console.log(newArray)
 
   if(object.lower) {
     newArray = newArray.concat(lowerCase);
   }
-  console.log(newArray)
 
   if(object.upper) {
     newArray = newArray.concat(upperCase);
   }
-  console.log(newArray)
 
   if(object.number) {
     newArray = newArray.concat(numbers);
   }
-  console.log(newArray)
 
-  console.log('object ', object)
-
-
+//the for loop will use the variable index and it will run for the object.length which is the password length the user enters.
+// within the for loop the new password will become an array. it does this by taking the array created through the if statements
+//above and running that array through the makeRandom funtion the object.length amount of times.
+//and finally to get the new password to become a string the concat funtion is used to combine the arrPassword into 
+//a string in the final variable called password.
   for(var i = 0; i < object.length; ++i) {
     var arrPassword = makeRandom(newArray);
-    console.log(arrPassword);
     password = password.concat(arrPassword)
   }
-
-  // var password = arrPassword.join()
-  // console.log(password)
-  console.log(typeof arrPassword)
-  // password = password.concat(arrPassword)
-  console.log("final password", password)
-  // console.log(arrPassword.join(''))
-
+//the return password gives the user their password on the web page.
   return password;
 
 }
